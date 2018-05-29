@@ -1,0 +1,30 @@
+{
+    "beimeizhou": [
+        "请求的json数据1",
+        "请求的json数据2"
+    ],
+    "nanmeizhou": [
+        "请求的json数据3",
+        "请求的json数据4"
+    ],
+    "ouzhou": [
+        "请求的json数据5",
+        "请求的json数据6",
+        "请求的json数据7",
+        "请求的json数据8"
+    ],
+    "feizhou": [
+        "请求的json数据9",
+        "请求的json数据10",
+        "请求的json数据11",
+        "请求的json数据12"
+    ],
+    "yazhou": [
+        "请求的json数据13",
+        "请求的json数据14"
+    ],
+    "dayangzhou": [
+        "请求的json数据15",
+        "请求的json数据16"
+    ]
+}

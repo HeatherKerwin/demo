@@ -1,0 +1,22 @@
+.conSixmap{position:relative;width:678px;height:335px;margin:0 auto;background:url(../images/tuanduimapBg.png) no-repeat;color:#000;font-family:"微软雅黑"}
+.conSixmap .name .condetail{display:none;position:absolute;z-index:10;width:216px;padding:10px;left:50%;margin-left:-118px;top:54px;background:url(../images/opcity83.png) repeat;border-radius:5px;}
+.conSixmap .condetail span{display:block;color:#fff;font-size:14px;text-align:left;}
+.conSixmap .name{position:absolute;width:52px;height:55px;}
+.conSixmap .name a{display:block;z-index:2;position:absolute;padding-top:35px;text-align:center;cursor:pointer;width:52px;height:20px;color:#000;font-size:12px;}
+.conSixmap .conmap01{left:91px;top:73px;}
+.conSixmap .conmap01 a{background:url(../images/beimeipicBg.png) no-repeat top center;}
+
+.conSixmap .conmap02 {left:180px;top:213px;}
+.conSixmap .conmap02 a{background:url(../images/nanmeimapbg.png) no-repeat top center;}
+
+.conSixmap .conmap03 {left:339px;top:68px;}
+.conSixmap .conmap03 a{background:url(../images/ouzhoumapBg.png) no-repeat top center;}
+
+.conSixmap .conmap04{left:327px;top:158px;}
+.conSixmap .conmap04 a{background:url(../images/feizhoumapbg.png) no-repeat top center;}
+
+.conSixmap .conmap05 {left:480px;top:75px;}
+.conSixmap .conmap05 a{background:url(../images/yazhoumapBg.png) no-repeat top center;}
+
+.conSixmap .conmap06 {left:545px;top:220px;}
+.conSixmap .conmap06 a{background:url(../images/dayangmapbg.png) no-repeat top center;}

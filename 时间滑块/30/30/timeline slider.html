@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<!--[if IE 7 ]>    <html lang="en" class="ie ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="ie"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<!-- 
+	THIS HTML HAS BEEN MINIFIED FOR PREVIEW PURPOSES 
+	THE ORIGINAL SOURCE FILE IS ALL PROPERLY FORMATTED
+	AND EACH DIV COMMENTED FOR AN EASY MANAGEMENT
+	ALSO, ALL CONFIG SETTINGS AVAILABLE FROM THE HTML
+	HAS BEEN DIRECTLY PARSED TO HIDDEN JS VARS
+-->
+
+<head>
+<meta charset="utf-8">
+<title>jQuery Timeline Slider by pezflash</title>
+<meta name="description" content="jQuery Plugin for building timelines"/>
+<meta name="keywords" content="jQuery timeline, History timeline, Company timeline, Web timeline, Html5 audio player, JQuery Timeline Plugin, Pezflash, Codecanyon, Themeforest timeline, Codecanyon timeline"/>
+<meta name="robots" content="index, follow"/>
+<link rel='stylesheet' href='css/css.css' type='text/css'>
+<link rel="stylesheet" href="css/tipsy.css" type="text/css">
+<link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/m.css" type="text/css" media="all">
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>
+<script type="text/javascript" src="js/jquery.ui.touch-punch.js"></script>
+<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="js/jquery.tipsy.js"></script>
+<script type="text/javascript" src="js/audio.min.js"></script>
+<script type="text/javascript" src="js/s.js"></script>
+<script type="text/javascript" src="js/m.js"></script>
+</head>
+<body>
+<div class="container">
+	<div class="preload"> <img src="images/preloader.gif" alt="" /> </div>
+	<div id="timeline_container">
+		<div id="timeline">
+			<div class="viewport">
+				<div class="images"> <img src="images/content_img_1.png" alt="" /> <img src="images/content_img_2.png" alt="" /> <img src="images/content_img_3.png" alt="" /> <img src="images/content_img_4.png" alt="" /> <img src="images/content_img_5.png" alt="" /> <img src="images/content_img_6.jpg" alt="" /> </div>
+			</div>
+			<div class="scrollbar">
+				<div class="track">
+					<div class="marks">
+						<div id="m0" class="mark" data-xpos="360" data-label="MARCH 1992"></div>
+						<div id="m1" class="mark" data-xpos="520" data-label="2005"></div>
+						<div id="m2" class="mark" data-xpos="700" data-label="2006 - PARTNERS"></div>
+						<div id="m3" class="mark" data-xpos="810" data-label="2010"></div>
+					</div>
+					<div class="dragger"></div>
+				</div>
+			</div>
+			<div class="milestones">
+				<div class="content">
+					<div class="column_first">
+						<div class="c200"> <span class="date">NOVEMBER 1978 - STARTUP</span> <span class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, <strong>sed do eiusmod tempor incididunt</strong> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.<br/>
+							<br/>
+							Ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </span> </div>
+					</div>
+					<div class="column">
+						<div class="c125"> <span class="date">1985</span> <span class="txt">Ut enim ad minim veniam, quis nostrud exercitation ullamco.<br/>
+							<br/>
+							Duis aute irure dolor in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </span> <span class="thumb"><a href="#extended_text1" data-rel="prettyPhoto" title=""><img src="images/read_more.png" alt="" class="readmore" title="READ MORE" /></a></span>
+							<div id="extended_text1" class="hidden">
+								<p><strong>Sample of extended content opened with lightbox</strong><br/>
+									<br/>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip <a href="http://www.themeforest.net" target="_blank">sample of external link</a>. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							</div>
+						</div>
+					</div>
+					<div class="column">
+						<div class="c125"> <span class="date">MARCH 1992</span> <span class="txt">Ut enim ad minim veniam, quis nostrud exercitation ullamco.</span> <span class="date"><br/>
+							NOVEMBER 1999</span> <span class="txt">Duis aute irure dolor in voluptate velit esse.</span> </div>
+					</div>
+					<div class="column">
+						<div class="c125"> <span class="date">2002 - 20 YEARS<br/>
+							ANNIVERSARY VIDEO</span> <span class="thumb"><a href="http://vimeo.com/24492485" data-rel="prettyPhoto" title="20 Years Anniversary Video" class="video_rollover"><img src="images/video_sample_thumb.png" alt="" /></a></span> <span class="thumb_description">Short video description</span> </div>
+					</div>
+					<div class="column">
+						<div class="c150"> <span class="date">2005</span> <span class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span> <span class="big_link"><a href="images/gallery_sample_02.jpg" data-rel="prettyPhoto[sample_gallery]" title="Gallery sample 01">> IMAGE GALLERY</a></span>
+							<div class="hidden"> <a href="images/gallery_sample_01.jpg" data-rel="prettyPhoto[sample_gallery]" title="Gallery sample 02"></a> <a href="images/gallery_sample_03.jpg" data-rel="prettyPhoto[sample_gallery]" title="Gallery sample 03"></a> </div>
+						</div>
+					</div>
+					<div class="column">
+						<div class="c125"> <span class="date">2006 - WPA PARTNERS</span> <span class="txt">Sample of external links:</span> <span class="link"><br/>
+							<a href="http://themeforest.net/user/pezflash" target="_blank">www.envato.com</a></span> <span class="link"><a href="http://themeforest.net/user/pezflash" target="_blank">www.themeforest.net</a></span> <span class="link"><a href="http://themeforest.net/user/pezflash" target="_blank">www.codecanyon.net</a></span> </div>
+					</div>
+					<div class="column">
+						<div class="c225"> <span class="date">2010 - WIDE COLUMN SAMPLE</span> <span><img src="images/logos.png" alt="" /></span> <span class="txt">Ut enim ad minim veniam, quis nostrud exercit ullamco. Duis aute irure dolor in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </span> <span class="thumb"><a href="#extended_text2" data-rel="prettyPhoto" title=""><img src="images/read_more.png" alt="" class="readmore" title="READ MORE" /></a></span>
+							<div id="extended_text2" class="hidden">
+								<p><strong>Sample of extended content opened with lightbox</strong><br/>
+									<br/>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip <a href="http://www.themeforest.net" target="_blank">sample of external link</a>. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							</div>
+						</div>
+					</div>
+					<div class="column">
+						<div class="c125"> <span class="date">2012 - PRESENT</span> <span class="thumb"><a href="images/gallery_sample_01.jpg" data-rel="prettyPhoto[sample_gallery2]" title="10 Years Anniversary Video" class="image_rollover"><img src="images/image_sample_thumb.png" alt="" /></a></span> <span class="thumb_description">Image description</span>
+							<div class="hidden"> <a href="images/gallery_sample_02.jpg" data-rel="prettyPhoto[sample_gallery2]" title="Gallery sample 02"></a> <a href="images/gallery_sample_03.jpg" data-rel="prettyPhoto[sample_gallery2]" title="Gallery sample 03"></a> </div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="audio_player">
+				<audio src="music/music.mp3" preload="auto"></audio>
+			</div>
+		</div>
+		<div class="shadow"> <img src="images/shadow.png" alt="" /> </div>
+	</div>
+	<div class="help"> <img src="images/help.jpg" alt="" /> </div>
+	<div class="help_button"> <img src="images/help_bt.png" alt="" /> </div>
+	<div class="title"> <img src="images/title.png" alt="" /> </div>
+</div>
+</body>
+</html>

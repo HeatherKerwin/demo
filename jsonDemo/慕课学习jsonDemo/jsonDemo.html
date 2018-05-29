@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jsonDemo</title>
+</head>
+<style>
+    body, input, select, button, h1{
+        font-size:20px;
+        line-height：1.7;
+    }
+</style>
+<body>
+<h1>员工查询</h1>
+<label>请输入员工编号：</label>
+<input type="text" id="keyword"/>
+<button id="search">查询</button>
+<p id="searchResult"></p>
+
+
+<h1>员工创建</h1>
+<label>请输入员工姓名：</label>
+<input type="text" id="staffName"/><br>
+<label>请输入员工编号：</label>
+<input type="text" id=“staffNumber"/><br>
+<label>请选择员工性别：</label>
+<select id=staffSex>
+    <option>男</option>
+    <option>女</option>
+</select><br>
+<label>请输入员工职位：</label>
+<input type="text" id="staffJob"/><br>
+<button id="save">保存</button>
+<p id="createResult"></p>
+</body>
+<script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.js">
+    //百度提供的jQuery的库，直接引用，不用下载,使用jQuery来实现demo
+</script>
+<script>
+    $(document).ready(function(){
+        $("#search").click(function(){
+            $.ajax({
+                type:"GET",
+                url:"service.php?number="+$("#keyword").val(),
+                datatype:"json",
+                success:function(data){
+                    if(data.success){
+                        $("#searchResult").html(data.msg);
+                    }
+                    else{
+                        $("#searchResult").html("Error："+data.msg);
+                    }
+                },
+                error:function(jqXHR){
+                    alert("Error："+jqXHR.status);
+                }
+            });
+        });
+
+        $("#save").click(function(){
+            $.ajax({
+                type:"POST",
+                url:"service.php",
+                data:{
+                    name:$("#staffName").val(),
+                    number:$("#staffNumber").val(),
+                    sex:$("#staffSex").val(),
+                    job:$("#staffJob").val(),
+                },
+                datatype:"json",
+                success:function(data){
+                    if(data.success){
+                        $("#createResult").html(data.msg);
+                    }
+                    else{
+                        $("#createResult").html("Error："+data.msg);
+                    }
+                },
+                error:function(jqXHR){
+                    alert("Error："+jqXHR.status);
+                }
+            });
+        });
+    });
+
+
+</script>
+</html>

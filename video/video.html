@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<video data-icon="0" src="" data-state="a" style="width:100%;height:13.1875rem;" id="videoBox" webkit-playsinline
+       playsinline></video>
+<!--video标签-->
+<div class="btnPlay"><img class="left" src="images/playBagin.png" alt="" data-icon="0">
+    <p class="progressTime left">0:00</p></div>
+<!--开始按钮div-->
+    <div class="progressBar"></div> <!--//蓝条进度条div-->
+    <div class="imgBox"><img id="progressImg" src="images/progressPointer.png" alt=""></div>
+</div><!--//进度条拖拉图片divBox-->
+
+<div class="biggerBtn" data-icon="0"><img class="right" src="images/allBigger.png" alt="">
+    <p class="allTime right"></p></div>
+</div><!--//全屏div-->
+</body>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+<script>
+    var  video  =  document.getElementById("video");
+    var video2 = $("#video");
+    //视频总时间
+    video2.on('loadedmetadata', function() {
+        var time = video.duration;
+        $('.allTime').text(time.toFixed(2));
+    });
+    //视频进度时间
+    video2.on('timeupdate', function() {
+        var time = video.currentTime,alltime = video.duration;
+        var percentage = 100 *(time / alltime);
+        $('.progressTime').text(time.toFixed(2));
+        $('.progressBar').css({'width':percentage + '%'});
+        $('.stateBox .progressBox .imgBox img').css({'margin-left':percentage +'%'});
+        if(time == alltime){
+            $('.btnPlay img').attr('src','images/playBagin.png'); //如果播放时间到总时间播放按钮图片换成停止图片
+        }
+    });
+    //视频开始按钮事件
+    $('.btnPlay img').on('touchend',function(){
+        if(video.paused) {
+            video.play();
+            $(this).attr('src','images/pause_btn.png');
+        }else {
+            video.pause();
+            $(this).attr('src','images/playBagin.png');
+        }
+        return false;
+    });
+
+    //视频开始按钮事件
+    $('.btnPlay img').on('touchend',function(){
+        if(video.paused) {
+            video.play();
+            $(this).attr('src','images/pause_btn.png');
+        }else {
+            video.pause();
+            $(this).attr('src','images/playBagin.png');
+        }
+        return false;
+    });
+
+   /* 拖拉进度条：*/
+
+    //拖拉函数
+    function changeBar(item){
+        var progress = $('.progressBox');
+        var maxduration = video.duration; //视频总时间
+        var barIcon = $('.nav .biggerBtn').attr('data-icon'),position,percentage;
+        if(barIcon == 0){
+            position = item - progress.offset().left; //横屏模式
+        }else{
+            position = item - progress.offset().top; //全屏竖屏模式
+        }
+        percentage = 100 * (position / progress.width());
+        if(percentage > 100) {
+            percentage = 100;
+        }
+        if(percentage < 0) {
+            percentage = 0;
+        }
+        $('.progressBar').css('width', percentage+'%');
+        $('.stateBox .progressBox .imgBox img').css({'margin-left':percentage +'%'});
+        video.currentTime = maxduration * (percentage / 100);//视频进度时间传给当前时间
+        video.play();
+        $('.btnPlay img').attr('src','images/pause_btn.png');
+    }
+    //视频拖拉按钮事件
+    var progressBox = document.getElementById('progressBox_special');
+    progressBox.addEventListener('touchstart', progressBox_item, false);
+    function progressBox_item(e){
+        var barIcon = $('.nav .biggerBtn').attr('data-icon');
+        var point = fristPoint(e);
+        if(barIcon == 0){
+            changeBar(point.pageX);
+        }else{
+            changeBar(point.pageY);
+        }
+    };
+    //拖拉按钮
+    var statePic = document.getElementById('progressImg');
+    statePic.addEventListener('touchmove', itemMove, false);//发现h5的touchmove行为要通过addEventListener注册
+    function itemMove(e){
+        e.stopPropagation();//阻止默认行为
+        var barIcon = $('.nav .biggerBtn').attr('data-icon');
+        var point = fristPoint(e);
+        if(barIcon == 0){
+            changeBar(point.pageX);//横屏
+        }else{
+            changeBar(point.pageY); //全屏竖屏
+        }
+    };
+    //第一个手指为准
+    function fristPoint(e){
+        return e.touches ? e.touches[0] : e;
+    }
+
+    //点击全屏
+    var itemHeight = document.documentElement.clientHeight;//获取手机高度
+    var itemWidth = document.documentElement.clientWidth;//手机宽度
+    $('.biggerBtn img').on('touchend',function(event){
+        event.stopPropagation();
+        var dataIcon = $(this).parent().attr('data-icon');
+        if(dataIcon == 0){
+            $('.nav').css({'-webkit-transform':'rotate(90deg)'});//直接把视频旋转90°，给video高度宽度重新赋值。
+            $('.nav video').css({'width':itemHeight,'height':itemWidth});
+            $('.stateBox').css({'width':itemHeight});
+            $('.biggerBtn').attr('data-icon','1');
+            $('.nav video').attr('data-icon','1');
+        }else{
+            $('.nav').css({'-webkit-transform':'rotate(0deg)'});
+            $('.nav video').css({'width':itemWidth,'height':'13.1875rem'});
+            $('.stateBox').css({'width':itemWidth});
+            $('.biggerBtn').attr('data-icon','0');
+            $('.nav video').attr('data-icon','0');
+        }
+    });
+</script>
+</html>
