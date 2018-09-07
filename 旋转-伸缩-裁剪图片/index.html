@@ -52,6 +52,7 @@
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/cropper.min.js"></script>
+<script type="text/javascript" src="js/drawImage.js"></script>
 <script type="text/javascript">
 
     //弹出框水平垂直居中
@@ -91,7 +92,7 @@
     //cropper图片裁剪
     $('#tailoringImg').cropper({
 //        aspectRatio: 9/4,//默认比例
-        minCanvasHeight：
+//        minCanvasHeight
         preview: '.previewImg',//预览视图
         guides: false,  //裁剪框的虚线(九宫格)
         autoCropArea: 0.5,  //0-1之间的数值，定义自动剪裁区域的大小，默认0.8
@@ -135,6 +136,8 @@
         }else{
             var cas = $('#tailoringImg').cropper('getCroppedCanvas');//获取被裁剪后的canvas
             var base64url = cas.toDataURL('image/png'); //转换为base64地址形式
+            compressImg(base64url);
+
             $("#finalImg").prop("src",base64url);//显示为图片的形式
 
             //关闭裁剪框
